@@ -4,9 +4,9 @@ A rule that checks whether a method is an extension and whether it overrides an 
 Class {
 	#name : 'ReOverridingExtentsionMethod',
 	#superclass : 'ReAbstractRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Potential Bugs',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Potential Bugs'
 }
 
 { #category : 'running' }
