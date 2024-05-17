@@ -72,8 +72,7 @@ ReRuleManager class >> defaultRules [
 
 { #category : 'accessing' }
 ReRuleManager class >> enabled [
-	enabled ifNil: [ enabled:= true ].
-	^ enabled
+	^ enabled ifNil: [ enabled := true ]
 ]
 
 { #category : 'accessing' }
@@ -174,12 +173,23 @@ ReRuleManager class >> ruleToggleGroupID [
 
 { #category : 'settings' }
 ReRuleManager class >> ruleToggleSettingsOn: aBuilder [
+
 	<systemsettings>
 	(aBuilder group: self ruleToggleGroupID)
 		order: 1;
 		label: 'Toggle rules to run';
-		description: 'Select which rules do you want to see in the live feedback';
-		parent: #qualityAssistant
+		description:
+			'Select which rules do you want to see in the live feedback';
+		parent: #qualityAssistant;
+		with: [
+			(self visibleRuleClasses groupedBy: [ :class | class new group ])
+				keysAndValuesDo: [ :groupName :rules |
+					(aBuilder group: #'' , groupName)
+						noOrdering;
+						iconName: #smallConfiguration;
+						label: groupName , ' rules';
+						description: 'select ', groupName , ' rules';
+						with: [ self subSettingsOn: aBuilder with: rules] ] ]
 ]
 
 { #category : 'accessing' }
