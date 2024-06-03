@@ -70,15 +70,19 @@ ReRuleManager class >> defaultRules [
 			thenCollect: [:ruleClass | ruleClass new]
 ]
 
-{ #category : 'accessing' }
-ReRuleManager class >> enabled [
-	^ enabled ifNil: [ enabled := true ]
-]
+{ #category : 'reflective operations' }
+ReRuleManager class >> doesNotUnderstand: aMessage [
 
-{ #category : 'accessing' }
-ReRuleManager class >> enabled: anObject [
-
-	enabled := anObject
+	(aMessage selector beginsWith: 'toggleGroupNamed')
+		ifTrue: [
+			| ruleName rules |
+			ruleName := (aMessage selector allButFirst: 16) withoutSuffix: ':'.
+			rules := self visibleRuleClasses select: [ :class |
+				         class group = ruleName ].
+			^ (aMessage selector endsWith: ':')
+				  ifTrue: [ rules do: [ :rule | rule enabled: aMessage arguments first ] ]
+				  ifFalse: [ rules anySatisfy: [ :rule | rule enabled ] ] ]
+		ifFalse: [ super doesNotUnderstand: aMessage ]
 ]
 
 { #category : 'class initialization' }

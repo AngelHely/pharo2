@@ -60,3 +60,18 @@ ReJustSendsSuperRule >> initialize [
 	super initialize.
 	matcher := RBParseTreeSearcher justSendsSuper
 ]
+
+{ #category : 'accessing' }
+ReJustSendsSuperRule >> name [
+	^ 'Method just sends super message'
+]
+
+{ #category : 'accessing' }
+ReJustSendsSuperRule >> rationale [
+	^ 'Check for methods that just forward the message to its superclass.'
+]
+
+{ #category : 'accessing' }
+ReJustSendsSuperRule >> severity [
+	^ #information
+]

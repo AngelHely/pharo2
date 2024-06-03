@@ -103,6 +103,12 @@ ReInvocationSequenceRule >> initialize [
 	postConditions := Set new
 ]
 
+{ #category : 'accessing' }
+ReInvocationSequenceRule >> name [
+
+	^ 'Invocation order incorect'
+]
+
 { #category : 'running' }
 ReInvocationSequenceRule >> postCheck: anAST forCriticsDo: aCriticBlock [
 	| remainingPostConditions encounteredCritics |

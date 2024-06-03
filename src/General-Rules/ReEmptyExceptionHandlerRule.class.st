@@ -10,19 +10,14 @@ having an empty block is a bad idea because the program silently fails.
 Class {
 	#name : 'ReEmptyExceptionHandlerRule',
 	#superclass : 'ReNodeMatchRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Potential Bugs',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Potential Bugs'
 }
 
 { #category : 'accessing' }
 ReEmptyExceptionHandlerRule class >> group [
 	^ 'Potential Bugs'
-]
-
-{ #category : 'accessing' }
-ReEmptyExceptionHandlerRule class >> ruleName [
-	^ 'Empty exception handler'
 ]
 
 { #category : 'accessing' }
@@ -52,4 +47,9 @@ ReEmptyExceptionHandlerRule >> initialize [
 		'`@block
 			on: `exception
 			do: [ :`@err | | `@temps | ]'
+]
+
+{ #category : 'accessing' }
+ReEmptyExceptionHandlerRule >> name [
+	^ 'Empty exception handler'
 ]

@@ -15,11 +15,6 @@ ReIfTrueIfFalseUselessRule class >> group [
 	^ 'Design Flaws'
 ]
 
-{ #category : 'accessing' }
-ReIfTrueIfFalseUselessRule class >> ruleName [
-	^ 'useless ifTrue:ifFalse:'
-]
-
 { #category : 'initialization' }
 ReIfTrueIfFalseUselessRule >> initialize [
 
@@ -29,4 +24,10 @@ ReIfTrueIfFalseUselessRule >> initialize [
 		with: '^ (`@condition)';
 		replace: ' (`@condition) ifFalse: [ ^ false ] ifTrue: [ ^ true ] '
 		with: '^ (`@condition)'
+]
+
+{ #category : 'accessing' }
+ReIfTrueIfFalseUselessRule >> name [ 
+
+^ 'useless ifTrue:ifFalse:'
 ]

@@ -86,8 +86,20 @@ ReCompactSourceCodeRule >> check: aMethod forCritiquesDo: aCriticBlock [
 					by: self)  ]
 ]
 
+{ #category : 'accessing' }
+ReCompactSourceCodeRule >> name [
+
+	^ 'Unnecessary characters found in method body'
+]
+
 { #category : 'testing' }
 ReCompactSourceCodeRule >> providesChange [
 
 	^ true
+]
+
+{ #category : 'accessing' }
+ReCompactSourceCodeRule >> severity [
+
+	^ #information
 ]

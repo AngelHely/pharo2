@@ -20,3 +20,15 @@ ReInstanceSideValueMethodProtocolRule class >> selector [
 
 	^ #value
 ]
+
+{ #category : 'accessing - defaults' }
+ReInstanceSideValueMethodProtocolRule >> protocolName [
+
+	^ 'evaluating'
+]
+
+{ #category : 'accessing - defaults' }
+ReInstanceSideValueMethodProtocolRule >> selector [
+
+	^ #value
+]

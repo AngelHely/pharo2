@@ -53,3 +53,13 @@ ReExcessiveArgumentsRule >> basicCheck: aMethod [
 
 	^ aMethod numArgs >= self argumentsCount
 ]
+
+{ #category : 'accessing' }
+ReExcessiveArgumentsRule >> name [
+	^ 'Excessive number of arguments'
+]
+
+{ #category : 'accessing' }
+ReExcessiveArgumentsRule >> rationale [
+	^ 'Long argument lists (five or more) can indicate that a new object should be created to wrap the numerous parameters.'
+]

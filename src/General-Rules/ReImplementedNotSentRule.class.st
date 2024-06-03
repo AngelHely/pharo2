@@ -18,9 +18,9 @@ Class {
 	#classInstVars : [
 		'allMessages'
 	],
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Design Flaws',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Design Flaws'
 }
 
 { #category : 'accessing' }
@@ -150,4 +150,14 @@ ReImplementedNotSentRule >> basicCheck: aMethod [
 						  occurrencesToFind := occurrencesToFind - 1.
 						  false ] ]
 			  ifFalse: [ false ] ]
+]
+
+{ #category : 'accessing' }
+ReImplementedNotSentRule >> name [
+	^ 'Methods implemented but not sent'
+]
+
+{ #category : 'accessing' }
+ReImplementedNotSentRule >> severity [
+	^ #information
 ]

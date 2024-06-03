@@ -62,3 +62,21 @@ ReSentButNotUnderstoodBySuperRule >> check: aMethod forCritiquesDo: aCriticBlock
 				 intervalOf: msgSend
 				 hint: msgSend selector asString) ]
 ]
+
+{ #category : 'accessing' }
+ReSentButNotUnderstoodBySuperRule >> name [
+
+	^ 'Messages sent that super can not understand'
+]
+
+{ #category : 'accessing' }
+ReSentButNotUnderstoodBySuperRule >> rationale [
+
+	^ 'Checks for messages that are sent by a method to super, but no superclass implements such a message. Reported methods will certainly cause a doesNotUnderstand: message when they are executed.'
+]
+
+{ #category : 'accessing' }
+ReSentButNotUnderstoodBySuperRule >> severity [
+
+	^ #error
+]

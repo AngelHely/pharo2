@@ -49,3 +49,13 @@ ReMethodSourceContainsLinefeedsRule >> check: aMethod forCritiquesDo: aCriticBlo
 			by: self
 			hint: 'lf') ]
 ]
+
+{ #category : 'accessing' }
+ReMethodSourceContainsLinefeedsRule >> name [
+	^ 'Method source contains linefeeds'
+]
+
+{ #category : 'accessing' }
+ReMethodSourceContainsLinefeedsRule >> severity [
+	^ #error
+]

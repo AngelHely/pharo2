@@ -4,19 +4,14 @@ Floating point types are imprecise. Using the operators = or ~= might not yield 
 Class {
 	#name : 'ReFloatEqualityComparisonRule',
 	#superclass : 'ReNodeMatchRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Potential Bugs',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Potential Bugs'
 }
 
 { #category : 'accessing' }
 ReFloatEqualityComparisonRule class >> group [
 	^ 'Potential Bugs'
-]
-
-{ #category : 'accessing' }
-ReFloatEqualityComparisonRule class >> ruleName [
-	^ 'Float equality comparison'
 ]
 
 { #category : 'accessing' }
@@ -39,4 +34,9 @@ ReFloatEqualityComparisonRule >> initialize [
 			'`#floatLiteral ~= `@expr'
 			'`@expr = `#floatLiteral'
 			'`@expr ~= `#floatLiteral' )
+]
+
+{ #category : 'accessing' }
+ReFloatEqualityComparisonRule >> name [
+	^ 'Float equality comparison'
 ]

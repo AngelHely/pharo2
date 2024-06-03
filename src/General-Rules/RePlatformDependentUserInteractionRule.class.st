@@ -6,29 +6,14 @@ This rule should be updated.
 Class {
 	#name : 'RePlatformDependentUserInteractionRule',
 	#superclass : 'ReNodeMatchRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Potential Bugs',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Potential Bugs'
 }
 
 { #category : 'accessing' }
 RePlatformDependentUserInteractionRule class >> group [
 	^ 'Potential Bugs'
-]
-
-{ #category : 'accessing' }
-RePlatformDependentUserInteractionRule class >> rationale [
-	^ 'Check the methods that  use platform dependent user interactions.'
-]
-
-{ #category : 'accessing' }
-RePlatformDependentUserInteractionRule class >> ruleName [
-	^ 'Platform dependent user interaction'
-]
-
-{ #category : 'accessing' }
-RePlatformDependentUserInteractionRule class >> severity [
-	^ #error
 ]
 
 { #category : 'accessing' }
@@ -53,4 +38,19 @@ RePlatformDependentUserInteractionRule >> initialize [
 			'PopUpMenu labels: `@object1'
 			'PopUpMenu withCaption: `@object1 chooseFrom: `@object2'
 			 )
+]
+
+{ #category : 'accessing' }
+RePlatformDependentUserInteractionRule >> name [
+	^ 'Platform dependent user interaction'
+]
+
+{ #category : 'accessing' }
+RePlatformDependentUserInteractionRule >> rationale [
+	^ 'Check the methods that  use platform dependent user interactions.'
+]
+
+{ #category : 'accessing' }
+RePlatformDependentUserInteractionRule >> severity [
+	^ #error
 ]

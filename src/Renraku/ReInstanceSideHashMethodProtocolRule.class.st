@@ -20,3 +20,15 @@ ReInstanceSideHashMethodProtocolRule class >> selector [
 
 	^ #hash
 ]
+
+{ #category : 'accessing - defaults' }
+ReInstanceSideHashMethodProtocolRule >> protocolName [
+
+	^ 'comparing'
+]
+
+{ #category : 'accessing - defaults' }
+ReInstanceSideHashMethodProtocolRule >> selector [
+
+	^ #hash
+]

@@ -20,3 +20,15 @@ ReInstanceSidePrintOnMethodProtocolRule class >> selector [
 
 	^ #printOn:
 ]
+
+{ #category : 'accessing - defaults' }
+ReInstanceSidePrintOnMethodProtocolRule >> protocolName [
+
+	^ 'printing'
+]
+
+{ #category : 'accessing - defaults' }
+ReInstanceSidePrintOnMethodProtocolRule >> selector [
+
+	^ #printOn:
+]

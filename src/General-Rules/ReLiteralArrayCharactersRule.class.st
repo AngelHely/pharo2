@@ -4,9 +4,9 @@ Literal arrays containing only characters can more efficiently represented as st
 Class {
 	#name : 'ReLiteralArrayCharactersRule',
 	#superclass : 'ReNodeBasedRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Optimization',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Optimization'
 }
 
 { #category : 'accessing' }
@@ -31,4 +31,9 @@ ReLiteralArrayCharactersRule >> basicCheck: aNode [
 	aNode isLiteralArray ifFalse: [ ^ false ].
 	aNode value ifEmpty: [ ^ false ].
 	^ aNode value allSatisfy: #isCharacter
+]
+
+{ #category : 'accessing' }
+ReLiteralArrayCharactersRule >> name [
+	^ 'Literal array contains only characters'
 ]

@@ -4,26 +4,15 @@ this smell arise when we use initialize instead of setUp in a TestCase
 Class {
 	#name : 'ReUseSetUpRule',
 	#superclass : 'ReNodeRewriteRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Design Flaws',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Design Flaws'
 }
 
 { #category : 'accessing' }
 ReUseSetUpRule class >> group [
 
 	^ 'Design Flaws'
-]
-
-{ #category : 'accessing' }
-ReUseSetUpRule class >> ruleName [
-	^ 'Uses setUp instead of initialize for Test class.'
-]
-
-{ #category : 'accessing' }
-ReUseSetUpRule class >> severity [
-
-	^ #error 
 ]
 
 { #category : 'manifest' }
@@ -42,6 +31,18 @@ ReUseSetUpRule >> initialize [
 		'initialize |`@temps| super initialize. `.@statements'
 		rewriteTo: 'setUp |`@temps| super setUp. `.@statements'.
 	self addMatchingMethod: 'initialize' rewriteTo: 'setUp'
+]
+
+{ #category : 'accessing' }
+ReUseSetUpRule >> name [
+
+	^ 'Uses setUp instead of initialize for Test class.'
+]
+
+{ #category : 'accessing' }
+ReUseSetUpRule >> severity [
+
+	^ #error 
 ]
 
 { #category : 'testing' }

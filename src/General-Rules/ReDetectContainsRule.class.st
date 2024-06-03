@@ -4,19 +4,14 @@ Checks for bytecodePrimEqual  using the do: method instead of using the contains
 Class {
 	#name : 'ReDetectContainsRule',
 	#superclass : 'ReNodeMatchRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Coding Idiom Violation',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Coding Idiom Violation'
 }
 
 { #category : 'accessing' }
 ReDetectContainsRule class >> group [
 	^ 'Coding Idiom Violation'
-]
-
-{ #category : 'accessing' }
-ReDetectContainsRule class >> ruleName [
-	^ 'Uses do: instead of contains: or detect:''s'
 ]
 
 { #category : 'accessing' }
@@ -54,4 +49,9 @@ ReDetectContainsRule >> initialize [
 				`@.Statements1.
 				`@condition ifTrue: [| `@BlockTemps | `@.BlockStatements1.  ^false].
 				`@.Statements2]' )
+]
+
+{ #category : 'accessing' }
+ReDetectContainsRule >> name [
+	^ 'Uses do: instead of contains: or detect:''s'
 ]

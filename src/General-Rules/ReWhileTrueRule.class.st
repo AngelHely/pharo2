@@ -14,24 +14,14 @@ statements2
 Class {
 	#name : 'ReWhileTrueRule',
 	#superclass : 'ReNodeMatchRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Coding Idiom Violation',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Coding Idiom Violation'
 }
 
 { #category : 'accessing' }
 ReWhileTrueRule class >> group [
 	^ 'Coding Idiom Violation'
-]
-
-{ #category : 'accessing' }
-ReWhileTrueRule class >> rationale [
-	^ 'Checks for users of whileTrue: when the shorter to:do: would work.'
-]
-
-{ #category : 'accessing' }
-ReWhileTrueRule class >> ruleName [
-	^ 'Uses whileTrue: instead of to:do:'
 ]
 
 { #category : 'accessing' }
@@ -77,4 +67,14 @@ ReWhileTrueRule >> initialize [
 					`@.BlockStmts1.
 					`index := `index - 1].
 			`@.Statements2' )
+]
+
+{ #category : 'accessing' }
+ReWhileTrueRule >> name [
+	^ 'Uses whileTrue: instead of to:do:'
+]
+
+{ #category : 'accessing' }
+ReWhileTrueRule >> rationale [
+	^ 'Checks for users of whileTrue: when the shorter to:do: would work.'
 ]

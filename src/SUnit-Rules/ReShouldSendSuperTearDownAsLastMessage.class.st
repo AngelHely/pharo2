@@ -60,3 +60,9 @@ ReShouldSendSuperTearDownAsLastMessage >> isClassToCheck: aClass [
 
 	^ { TestCase. TestResource } anySatisfy: [:each | aClass inheritsFrom: each ]
 ]
+
+{ #category : 'accessing' }
+ReShouldSendSuperTearDownAsLastMessage >> name [
+
+	^ 'Provide a call to super tearDown as the last message in the tearDown method'
+]

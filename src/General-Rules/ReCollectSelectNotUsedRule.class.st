@@ -6,9 +6,9 @@ For example, check that the result of a select: or detect: is used.
 Class {
 	#name : 'ReCollectSelectNotUsedRule',
 	#superclass : 'ReNodeBasedRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Optimization',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Optimization'
 }
 
 { #category : 'accessing' }
@@ -33,4 +33,9 @@ ReCollectSelectNotUsedRule >> basicCheck: aNode [
 	aNode isMessage ifFalse: [ ^ false ].
 	(#(#select: #collect: #reject:) includes: aNode selector) ifFalse: [ ^ false ].
 	^ aNode isUsedAsReturnValue not
+]
+
+{ #category : 'accessing' }
+ReCollectSelectNotUsedRule >> name [
+	^ 'Doesn''t use the result of a collect:/select:'
 ]

@@ -4,9 +4,9 @@ Checks for unconditional recursion that might cause the image to hang when execu
 Class {
 	#name : 'ReUnconditionalRecursionRule',
 	#superclass : 'ReNodeMatchRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Potential Bugs',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Potential Bugs'
 }
 
 { #category : 'testing' }
@@ -18,16 +18,6 @@ ReUnconditionalRecursionRule class >> checksMethod [
 { #category : 'accessing' }
 ReUnconditionalRecursionRule class >> group [
 	^ 'Potential Bugs'
-]
-
-{ #category : 'accessing' }
-ReUnconditionalRecursionRule class >> ruleName [
-	^ 'Unconditional recursion'
-]
-
-{ #category : 'accessing' }
-ReUnconditionalRecursionRule class >> severity [
-	^ #error
 ]
 
 { #category : 'accessing' }
@@ -51,4 +41,14 @@ ReUnconditionalRecursionRule >> initialize [
 			`@.before.
 			self `@message: `@args.
 			`@.after'
+]
+
+{ #category : 'accessing' }
+ReUnconditionalRecursionRule >> name [
+	^ 'Unconditional recursion'
+]
+
+{ #category : 'accessing' }
+ReUnconditionalRecursionRule >> severity [
+	^ #error
 ]

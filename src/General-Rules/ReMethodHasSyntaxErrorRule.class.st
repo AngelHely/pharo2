@@ -40,3 +40,13 @@ ReMethodHasSyntaxErrorRule class >> uniqueIdentifierName [
 ReMethodHasSyntaxErrorRule >> basicCheck: aMethod [
 	^aMethod isFaulty
 ]
+
+{ #category : 'accessing' }
+ReMethodHasSyntaxErrorRule >> name [
+	^ 'Method source has syntax errors'
+]
+
+{ #category : 'accessing' }
+ReMethodHasSyntaxErrorRule >> severity [
+	^ #error
+]

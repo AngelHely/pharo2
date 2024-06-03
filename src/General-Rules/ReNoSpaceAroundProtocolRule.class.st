@@ -56,3 +56,9 @@ ReNoSpaceAroundProtocolRule >> critiqueFor: aMethod [
 			   inMethod: aMethod selector
 			   inClass: aMethod methodClass name asSymbol)
 ]
+
+{ #category : 'accessing' }
+ReNoSpaceAroundProtocolRule >> name [
+
+	^ 'Protocol named "{1}" should be trimmed (includes space at start or end)' format: { protocolName }
+]

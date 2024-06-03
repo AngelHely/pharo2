@@ -57,3 +57,9 @@ ReShouldSendSuperInitializeAsFirstMessage >> basicCheck: aMethod [
 
 	^ (aMethod isClassSide not) and: [ aMethod selector = #initialize and: [ self class superInitializeNotCalledFirstIn: aMethod ] ]
 ]
+
+{ #category : 'accessing' }
+ReShouldSendSuperInitializeAsFirstMessage >> name [
+
+	^ 'Provide a call to super initialize as the first message in the instance side #initialize method'
+]

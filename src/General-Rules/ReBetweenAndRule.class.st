@@ -4,19 +4,14 @@ Replaces ""a >= b and: [a <= c]"" by ""a between: b and: c.
 Class {
 	#name : 'ReBetweenAndRule',
 	#superclass : 'ReNodeRewriteRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Coding Idiom Violation',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Coding Idiom Violation'
 }
 
 { #category : 'accessing' }
 ReBetweenAndRule class >> group [
 	^ 'Coding Idiom Violation'
-]
-
-{ #category : 'accessing' }
-ReBetweenAndRule class >> ruleName [
-	^ '"a >= b and: [a <= c]" -> "a between: b and: c"'
 ]
 
 { #category : 'accessing' }
@@ -46,4 +41,9 @@ ReBetweenAndRule >> initialize [
 		replace: '``@a <= ``@c & (``@b <= ``@a)' with: '``@a between: ``@b and: ``@c';
 		replace: '``@c >= ``@a and: [``@b <= ``@a]' with: '``@a between: ``@b and: ``@c';
 		replace: '``@c >= ``@a & (``@b <= ``@a)' with: '``@a between: ``@b and: ``@c'
+]
+
+{ #category : 'accessing' }
+ReBetweenAndRule >> name [
+	^ '"a >= b and: [a <= c]" -> "a between: b and: c"'
 ]

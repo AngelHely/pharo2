@@ -4,9 +4,9 @@ Check for possible uses of the result returned by an add: or addAll: messages. T
 Class {
 	#name : 'ReUsesAddRule',
 	#superclass : 'ReNodeBasedRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Potential Bugs',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Potential Bugs'
 }
 
 { #category : 'accessing' }
@@ -29,4 +29,9 @@ ReUsesAddRule class >> uniqueIdentifierName [
 { #category : 'running' }
 ReUsesAddRule >> basicCheck: node [
 	^ node isMessage and: [ (#(#add: #addAll:) includes: node selector) and: [ node isEssential ] ]
+]
+
+{ #category : 'accessing' }
+ReUsesAddRule >> name [
+	^ 'Uses the result of an add: message'
 ]

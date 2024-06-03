@@ -4,9 +4,9 @@ If a variable is only assigned a single literal value then that variable is eith
 Class {
 	#name : 'ReVariableAssignedLiteralRule',
 	#superclass : 'ReAbstractRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Design Flaws',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Design Flaws'
 }
 
 { #category : 'testing-interest' }
@@ -36,4 +36,9 @@ ReVariableAssignedLiteralRule >> check: aClass forCritiquesDo: aCriticBlock [
 		assignmentNodes size = 1 ifFalse: [ ^ self ].
 		assignmentNodes first value isLiteralNode ifTrue: [
 			aCriticBlock cull: (self critiqueFor: aClass about: variable name) ] ]
+]
+
+{ #category : 'accessing' }
+ReVariableAssignedLiteralRule >> name [
+	^ 'Variable is only assigned a single literal value'
 ]

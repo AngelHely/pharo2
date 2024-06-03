@@ -6,9 +6,9 @@ This smell arises when instance variables are defined in all subclasses. Many ti
 Class {
 	#name : 'ReInstVarInSubclassesRule',
 	#superclass : 'ReAbstractRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Design Flaws',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Design Flaws'
 }
 
 { #category : 'testing' }
@@ -70,4 +70,19 @@ ReInstVarInSubclassesRule >> critiqueFor: aClass [
 	^ ReRefactoringCritique
 			withAnchor: (self anchorFor: aClass)
 			by: self
+]
+
+{ #category : 'accessing' }
+ReInstVarInSubclassesRule >> name [
+	^ 'Same instance variable defined in ALL subclasses'
+]
+
+{ #category : 'accessing' }
+ReInstVarInSubclassesRule >> rationale [
+	^ 'All subclasses of this class define the same variable. Most likely this variable should be pulled up to the superclass.'
+]
+
+{ #category : 'accessing' }
+ReInstVarInSubclassesRule >> severity [
+	^ #information
 ]

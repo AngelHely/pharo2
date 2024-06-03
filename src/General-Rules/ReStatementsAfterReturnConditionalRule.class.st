@@ -37,6 +37,12 @@ ReStatementsAfterReturnConditionalRule >> basicCheck: aNode [
 	^ aNode ~= aNode methodNode statements last
 ]
 
+{ #category : 'accessing' }
+ReStatementsAfterReturnConditionalRule >> name [
+
+	^ 'statements written after conditional return'
+]
+
 { #category : 'utilities' }
 ReStatementsAfterReturnConditionalRule >> selectorList [
 

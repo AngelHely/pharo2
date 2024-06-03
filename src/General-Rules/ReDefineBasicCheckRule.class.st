@@ -41,3 +41,8 @@ ReDefineBasicCheckRule >> critiqueFor: aClass [
 		class: aClass
 		selector: #basicCheck:) beShouldBeImplemented
 ]
+
+{ #category : 'accessing' }
+ReDefineBasicCheckRule >> name [
+	^ 'Rule does not define #basicCheck:'
+]

@@ -4,9 +4,9 @@ Checks for literal arrays that contain the #, symbol. The user may have thought 
 Class {
 	#name : 'ReLiteralArrayContainsCommaRule',
 	#superclass : 'ReNodeBasedRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Coding Idiom Violation',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Coding Idiom Violation'
 }
 
 { #category : 'accessing' }
@@ -36,4 +36,9 @@ ReLiteralArrayContainsCommaRule >> basicCheck: aNode [
 		 FFICompilerPlugin ffiCalloutSelectors includes: aNode parent parent selector ]) ifTrue: [ ^ false ].
 
 	^ aNode value includes: #,
+]
+
+{ #category : 'accessing' }
+ReLiteralArrayContainsCommaRule >> name [
+	^ 'Literal array contains a #,'
 ]

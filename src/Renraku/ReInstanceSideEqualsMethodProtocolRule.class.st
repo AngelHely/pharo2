@@ -20,3 +20,15 @@ ReInstanceSideEqualsMethodProtocolRule class >> selector [
 
 	^ #=
 ]
+
+{ #category : 'accessing - defaults' }
+ReInstanceSideEqualsMethodProtocolRule >> protocolName [
+
+	^ 'comparing'
+]
+
+{ #category : 'accessing - defaults' }
+ReInstanceSideEqualsMethodProtocolRule >> selector [
+
+	^ #=
+]

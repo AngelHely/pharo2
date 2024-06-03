@@ -62,3 +62,9 @@ ReTempsReadBeforeWrittenRule >> findReadsBeforeWrittenTemporariesIn: aMethod [
 	^ (RBReadBeforeWrittenTester variablesReadBeforeWrittenIn:
 		   aMethod ast) array select: #isNotNil
 ]
+
+{ #category : 'accessing' }
+ReTempsReadBeforeWrittenRule >> name [
+
+	^ 'Temporaries may be read before written'
+]

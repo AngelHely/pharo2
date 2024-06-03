@@ -4,29 +4,14 @@ This smell arises when a breakpoint,  logging statement,  etc is found in a meth
 Class {
 	#name : 'ReCodeCruftLeftInMethodsRule',
 	#superclass : 'ReNodeRewriteRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Bugs',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Bugs'
 }
 
 { #category : 'accessing' }
 ReCodeCruftLeftInMethodsRule class >> group [
 	^ 'Bugs'
-]
-
-{ #category : 'accessing' }
-ReCodeCruftLeftInMethodsRule class >> rationale [
-	^ 'Breakpoints, logging statements, etc. should not be left in production code.'
-]
-
-{ #category : 'accessing' }
-ReCodeCruftLeftInMethodsRule class >> ruleName [
-	^ 'Debugging code left in methods'
-]
-
-{ #category : 'accessing' }
-ReCodeCruftLeftInMethodsRule class >> severity [
-	^ #error
 ]
 
 { #category : 'accessing' }
@@ -93,6 +78,11 @@ ReCodeCruftLeftInMethodsRule >> initialize [
 	self patterns do: [ :halt | self addRuleRemoving: halt ]
 ]
 
+{ #category : 'accessing' }
+ReCodeCruftLeftInMethodsRule >> name [
+	^ 'Debugging code left in methods'
+]
+
 { #category : 'private' }
 ReCodeCruftLeftInMethodsRule >> patternFor: selector [
 	selector isUnary ifTrue: [ ^ '`@object ', selector ].
@@ -120,4 +110,14 @@ ReCodeCruftLeftInMethodsRule >> patternForKeywordSelector: selector [
 { #category : 'private' }
 ReCodeCruftLeftInMethodsRule >> patterns [
 	^ self debuggingPatterns, self haltPatterns
+]
+
+{ #category : 'accessing' }
+ReCodeCruftLeftInMethodsRule >> rationale [
+	^ 'Breakpoints, logging statements, etc. should not be left in production code.'
+]
+
+{ #category : 'accessing' }
+ReCodeCruftLeftInMethodsRule >> severity [
+	^ #error
 ]

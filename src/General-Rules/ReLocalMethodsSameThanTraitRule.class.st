@@ -46,3 +46,8 @@ ReLocalMethodsSameThanTraitRule >> check: aClass forCritiquesDo: aCriticBlock [
 			aCriticBlock cull:
 				(ReRemoveMethodCritique for: aClass selector: duplicatedMethod selector by: self) ]
 ]
+
+{ #category : 'accessing' }
+ReLocalMethodsSameThanTraitRule >> name [
+	^ 'Repeated methods in the trait composition'
+]

@@ -25,24 +25,14 @@ aCollection reject: [ :each | ... anObject ]
 Class {
 	#name : 'ReNotEliminationRule',
 	#superclass : 'ReNodeRewriteRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Optimization',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Optimization'
 }
 
 { #category : 'accessing' }
 ReNotEliminationRule class >> group [
 	^ 'Optimization'
-]
-
-{ #category : 'accessing' }
-ReNotEliminationRule class >> rationale [
-	^ 'Eliminate unnecessary not''s in relation of conditionals'
-]
-
-{ #category : 'accessing' }
-ReNotEliminationRule class >> ruleName [
-	^ 'Eliminate unnecessary not''s'
 ]
 
 { #category : 'accessing' }
@@ -80,4 +70,14 @@ ReNotEliminationRule >> initialize [
 		replace: '(``@a ~~ ``@b) not' with: '``@a == ``@b';
 		replace: '(``@a >= ``@b) not' with: '``@a < ``@b';
 		replace: '(``@a > ``@b) not' with: '``@a <= ``@b'
+]
+
+{ #category : 'accessing' }
+ReNotEliminationRule >> name [
+	^ 'Eliminate unnecessary not''s'
+]
+
+{ #category : 'accessing' }
+ReNotEliminationRule >> rationale [
+	^ 'Eliminate unnecessary not''s in relation of conditionals'
 ]

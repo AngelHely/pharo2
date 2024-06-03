@@ -46,3 +46,13 @@ ReUsesTrueRule >> check: aMethod forCritiquesDo: aCriticBlock [
 	problemUsages do: [ :ref |
 		aCriticBlock cull: (self createTrivialCritiqueOn: aMethod intervalOf: ref hint: ref name asString)]
 ]
+
+{ #category : 'accessing' }
+ReUsesTrueRule >> name [
+	^ 'Uses True/False instead of true/false'
+]
+
+{ #category : 'accessing' }
+ReUsesTrueRule >> severity [
+	^ #error
+]

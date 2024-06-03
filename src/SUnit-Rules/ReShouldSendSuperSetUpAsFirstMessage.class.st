@@ -60,3 +60,9 @@ ReShouldSendSuperSetUpAsFirstMessage >> isClassToCheck: aClass [
 
 	^ { TestCase. TestResource } anySatisfy: [:each | aClass inheritsFrom: each ]
 ]
+
+{ #category : 'accessing' }
+ReShouldSendSuperSetUpAsFirstMessage >> name [
+
+	^ 'Provide a call to super setUp as the first message in the setUp method'
+]

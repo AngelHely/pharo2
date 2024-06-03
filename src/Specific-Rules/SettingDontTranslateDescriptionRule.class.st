@@ -15,11 +15,6 @@ SettingDontTranslateDescriptionRule class >> group [
 	^ 'API Hints'
 ]
 
-{ #category : 'accessing' }
-SettingDontTranslateDescriptionRule class >> ruleName [
-	^ 'Do not use #translated for setting''s description'
-]
-
 { #category : 'running' }
 SettingDontTranslateDescriptionRule >> basicCheck: aNode [
 	^ aNode methodNode ifNil: [ false ] ifNotNil: [ :methNode | self checkPreconditionOn: methNode ]
@@ -39,4 +34,10 @@ SettingDontTranslateDescriptionRule >> initialize [
 	self
 		replace: '`@recv description: `#str translated'
 		with: '`@recv description: `#str'
+]
+
+{ #category : 'accessing' }
+SettingDontTranslateDescriptionRule >> name [
+
+	^ 'Do not use #translated for setting''s description'
 ]

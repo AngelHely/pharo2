@@ -51,3 +51,8 @@ ReExplicitRequirementMethodsRule >> check: aClass forCritiquesDo: aCritiqueBlock
 						tinyHint: method selector;
 						yourself) ]
 ]
+
+{ #category : 'accessing' }
+ReExplicitRequirementMethodsRule >> name [
+	^ 'Explicit requirement methods'
+]

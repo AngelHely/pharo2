@@ -35,3 +35,8 @@ ReCollectionCopyEmptyRule class >> uniqueIdentifierName [
 ReCollectionCopyEmptyRule >> basicCheck: aClass [
 	^ (aClass inheritsFrom: Collection) and: [ aClass isVariable and: [ (aClass includesSelector: #copyEmpty) not and: [ aClass instVarNames isNotEmpty ] ] ]
 ]
+
+{ #category : 'accessing' }
+ReCollectionCopyEmptyRule >> name [
+	^ 'Subclass of collection that has instance variable but doesn''t define copyEmpty'
+]

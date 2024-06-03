@@ -47,3 +47,13 @@ ReBaselineProperlyPackagedRule >> basicCheck: aClass [
 	^(aClass name beginsWith: 'BaselineOf') 
 		and: [ aClass package name ~= aClass name ]
 ]
+
+{ #category : 'accessing' }
+ReBaselineProperlyPackagedRule >> name [
+	^ 'Baseline class not properly packaged in a package with the same name'
+]
+
+{ #category : 'accessing' }
+ReBaselineProperlyPackagedRule >> severity [
+	^ #information
+]

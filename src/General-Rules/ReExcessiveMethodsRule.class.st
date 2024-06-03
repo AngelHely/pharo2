@@ -51,3 +51,13 @@ ReExcessiveMethodsRule >> basicCheck: aClass [
 ReExcessiveMethodsRule >> methodsCount [
 	^ 60
 ]
+
+{ #category : 'accessing' }
+ReExcessiveMethodsRule >> name [
+	^ 'Excessive number of methods'
+]
+
+{ #category : 'accessing' }
+ReExcessiveMethodsRule >> rationale [
+	^ 'Large classes are indications that the class may be trying to do too much.'
+]

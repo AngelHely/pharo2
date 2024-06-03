@@ -4,19 +4,14 @@ Checks for return statements within ensure: blocks that can have unintended side
 Class {
 	#name : 'ReReturnInEnsureRule',
 	#superclass : 'ReNodeMatchRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Potential Bugs',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Potential Bugs'
 }
 
 { #category : 'accessing' }
 ReReturnInEnsureRule class >> group [
 	^ 'Potential Bugs'
-]
-
-{ #category : 'accessing' }
-ReReturnInEnsureRule class >> ruleName [
-	^ 'Contains a return in an ensure: block'
 ]
 
 { #category : 'accessing' }
@@ -38,4 +33,9 @@ ReReturnInEnsureRule >> initialize [
 	self matchesAny: #(
 		'`@rcv ensure: [| `@temps | `@.Stmts]'
 		'`@rcv ifCurtailed: [| `@temps | `@.Stmts]')
+]
+
+{ #category : 'accessing' }
+ReReturnInEnsureRule >> name [
+	^ 'Contains a return in an ensure: block'
 ]

@@ -20,3 +20,15 @@ ReInstanceSideFinalizeMethodProtocolRule class >> selector [
 
 	^ #finalize
 ]
+
+{ #category : 'accessing - defaults' }
+ReInstanceSideFinalizeMethodProtocolRule >> protocolName [
+
+	^ 'finalization'
+]
+
+{ #category : 'accessing - defaults' }
+ReInstanceSideFinalizeMethodProtocolRule >> selector [
+
+	^ #finalize
+]

@@ -44,3 +44,8 @@ ReAddRemoveDependentsRule >> basicCheck: aClass [
 				removeSends := removeSends + (messages count: [ :each | each selector == #removeDependent:])].
 	^ addSends > removeSends
 ]
+
+{ #category : 'accessing' }
+ReAddRemoveDependentsRule >> name [
+	^ 'Number of addDependent: messages > removeDependent:'
+]

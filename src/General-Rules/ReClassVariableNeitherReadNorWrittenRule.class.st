@@ -41,6 +41,17 @@ ReClassVariableNeitherReadNorWrittenRule >> check: aClass forCritiquesDo: aCriti
 		thenDo: [ :variable | aCriticBlock cull: (self critiqueFor: aClass about: variable name) ]
 ]
 
+{ #category : 'accessing' }
+ReClassVariableNeitherReadNorWrittenRule >> name [
+
+	^ 'Class variable not read or not written'
+]
+
+{ #category : 'accessing' }
+ReClassVariableNeitherReadNorWrittenRule >> severity [
+	^ #information
+]
+
 { #category : 'running' }
 ReClassVariableNeitherReadNorWrittenRule >> unreferencedVariablesOf: aClass [
 

@@ -6,9 +6,9 @@ The list of methods that should contain super message sends is in #superMessages
 Class {
 	#name : 'ReMissingSuperSendsRule',
 	#superclass : 'ReAbstractRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Potential Bugs',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Potential Bugs'
 }
 
 { #category : 'testing' }
@@ -59,4 +59,10 @@ ReMissingSuperSendsRule >> methodsRequiringSuper [
 
 	^ #( #release #postCopy #postBuildWith: #preBuildWith: #postOpenWith:
 	     #noticeOfWindowClose: #initialize )
+]
+
+{ #category : 'accessing' }
+ReMissingSuperSendsRule >> name [
+
+	^ 'Missing super sends in selected methods.'
 ]

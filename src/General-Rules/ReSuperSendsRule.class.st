@@ -4,19 +4,14 @@ Rewrite super messages to self messages when both refer to same method
 Class {
 	#name : 'ReSuperSendsRule',
 	#superclass : 'ReNodeRewriteRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Design Flaws',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Design Flaws'
 }
 
 { #category : 'accessing' }
 ReSuperSendsRule class >> group [
 	^ 'Design Flaws'
-]
-
-{ #category : 'accessing' }
-ReSuperSendsRule class >> ruleName [
-	^ 'Rewrite super messages to self messages'
 ]
 
 { #category : 'accessing' }
@@ -32,6 +27,11 @@ ReSuperSendsRule >> initialize [
 	self
 		replace: 'super `@message: ``@args'
 		with: 'self `@message: ``@args'
+]
+
+{ #category : 'accessing' }
+ReSuperSendsRule >> name [
+	^ 'Rewrite super messages to self messages'
 ]
 
 { #category : 'testing' }

@@ -20,3 +20,15 @@ ReInstanceSideInitializeMethodProtocolRule class >> selector [
 
 	^ #initialize
 ]
+
+{ #category : 'accessing - defaults' }
+ReInstanceSideInitializeMethodProtocolRule >> protocolName [
+
+	^ 'initialization'
+]
+
+{ #category : 'accessing - defaults' }
+ReInstanceSideInitializeMethodProtocolRule >> selector [
+
+	^ #initialize
+]

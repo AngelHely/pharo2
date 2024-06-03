@@ -54,3 +54,8 @@ ReClassVariableCapitalizationRule >> critiqueFor: aClass about: aVarName [
 
 	^ crit
 ]
+
+{ #category : 'accessing' }
+ReClassVariableCapitalizationRule >> name [
+	^ 'Class (or pool) variable not capitalized'
+]

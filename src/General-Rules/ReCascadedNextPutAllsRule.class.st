@@ -13,24 +13,14 @@ String streamContents: [ :s|
 Class {
 	#name : 'ReCascadedNextPutAllsRule',
 	#superclass : 'ReNodeRewriteRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Coding Idiom Violation',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Coding Idiom Violation'
 }
 
 { #category : 'accessing' }
 ReCascadedNextPutAllsRule class >> group [
 	^ 'Coding Idiom Violation'
-]
-
-{ #category : 'accessing' }
-ReCascadedNextPutAllsRule class >> rationale [
-	^ 'Use cascaded nextPutAll:''s instead of #, in #nextPutAll:.'
-]
-
-{ #category : 'accessing' }
-ReCascadedNextPutAllsRule class >> ruleName [
-	^ 'Use cascaded nextPutAll:''s instead of #, in #nextPutAll:'
 ]
 
 { #category : 'accessing' }
@@ -46,4 +36,14 @@ ReCascadedNextPutAllsRule >> initialize [
 	self
 		replace: '``@rcvr nextPutAll: ``@object1 , ``@object2' with: '``@rcvr nextPutAll: ``@object1; nextPutAll: ``@object2';
 		replace: '``@rcvr show: ``@object1 , ``@object2' with: '``@rcvr show: ``@object1; show: ``@object2'
+]
+
+{ #category : 'accessing' }
+ReCascadedNextPutAllsRule >> name [
+	^ 'Use cascaded nextPutAll:''s instead of #, in #nextPutAll:'
+]
+
+{ #category : 'accessing' }
+ReCascadedNextPutAllsRule >> rationale [
+	^ 'Use cascaded nextPutAll:''s instead of #, in #nextPutAll:.'
 ]

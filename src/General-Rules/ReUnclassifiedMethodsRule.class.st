@@ -36,3 +36,8 @@ ReUnclassifiedMethodsRule >> basicCheck: aMethod [
 
 	^ aMethod isClassified not
 ]
+
+{ #category : 'accessing' }
+ReUnclassifiedMethodsRule >> name [
+	^ 'Unclassified methods'
+]

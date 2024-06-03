@@ -52,3 +52,8 @@ ReInstanceVariableCapitalizationRule >> critiqueFor: aClass about: aVarName [
 
 	^ crit
 ]
+
+{ #category : 'accessing' }
+ReInstanceVariableCapitalizationRule >> name [
+	^ 'Instance variable capitalized'
+]

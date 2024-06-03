@@ -4,19 +4,14 @@ Checks code using the do: method instead of using the collect: or select: method
 Class {
 	#name : 'ReCollectionProtocolRule',
 	#superclass : 'ReNodeMatchRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Coding Idiom Violation',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Coding Idiom Violation'
 }
 
 { #category : 'accessing' }
 ReCollectionProtocolRule class >> group [
 	^ 'Coding Idiom Violation'
-]
-
-{ #category : 'accessing' }
-ReCollectionProtocolRule class >> ruleName [
-	^ 'Uses do: instead of collect: or select:''s'
 ]
 
 { #category : 'accessing' }
@@ -47,4 +42,9 @@ ReCollectionProtocolRule >> initialize [
 					`@object add: `each.
 					`@.BlockStatements2].
 			`@.Statements2]' )
+]
+
+{ #category : 'accessing' }
+ReCollectionProtocolRule >> name [
+	^ 'Uses do: instead of collect: or select:''s'
 ]

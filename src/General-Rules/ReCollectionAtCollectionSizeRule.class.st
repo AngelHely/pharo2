@@ -4,19 +4,14 @@ Checks for code using  ""collection at: collection size"" instead of ""collectio
 Class {
 	#name : 'ReCollectionAtCollectionSizeRule',
 	#superclass : 'ReNodeMatchRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Coding Idiom Violation',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Coding Idiom Violation'
 }
 
 { #category : 'accessing' }
 ReCollectionAtCollectionSizeRule class >> group [
 	^ 'Coding Idiom Violation'
-]
-
-{ #category : 'accessing' }
-ReCollectionAtCollectionSizeRule class >> ruleName [
-	^ 'Uses "collection at: collection size" instead of "collection last"'
 ]
 
 { #category : 'accessing' }
@@ -30,4 +25,9 @@ ReCollectionAtCollectionSizeRule class >> uniqueIdentifierName [
 ReCollectionAtCollectionSizeRule >> initialize [
 	super initialize.
 	self  matchesAny: #('`@collection at: `@collection size')
+]
+
+{ #category : 'accessing' }
+ReCollectionAtCollectionSizeRule >> name [
+	^ 'Uses "collection at: collection size" instead of "collection last"'
 ]

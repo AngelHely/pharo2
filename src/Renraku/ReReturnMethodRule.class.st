@@ -40,3 +40,15 @@ ReReturnMethodRule >> basicCheck: aMethod [
 
 	^ aMethod ast lastIsReturn not
 ]
+
+{ #category : 'accessing' }
+ReReturnMethodRule >> name [
+
+	^ 'Method should explicitly return a value'
+]
+
+{ #category : 'accessing' }
+ReReturnMethodRule >> severity [
+
+	^ #error
+]

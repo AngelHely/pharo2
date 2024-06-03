@@ -4,9 +4,9 @@ Checks for mathematical expressions that might be evaluated different (from left
 Class {
 	#name : 'RePrecedenceRule',
 	#superclass : 'ReNodeBasedRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Potential Bugs',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Potential Bugs'
 }
 
 { #category : 'accessing' }
@@ -35,4 +35,9 @@ RePrecedenceRule >> basicCheck: aNode [
 	leftOperand isMessage ifFalse: [ ^ false ].
 	leftOperand hasParentheses ifTrue: [ ^ false ].
 	^ #(#+ #-) includes: leftOperand selector
+]
+
+{ #category : 'accessing' }
+RePrecedenceRule >> name [
+	^ 'Inspect instances of "A + B * C" might be "A + (B * C)"'
 ]

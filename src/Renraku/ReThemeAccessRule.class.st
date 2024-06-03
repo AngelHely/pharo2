@@ -45,3 +45,8 @@ ReThemeAccessRule >> check: aMethod forCritiquesDo: aCriticBlock [
 				intervalOf: msgSend
 				hint: msgSend selector asString) ]
 ]
+
+{ #category : 'running' }
+ReThemeAccessRule >> name [
+	^ 'Access to UI theme.'
+]

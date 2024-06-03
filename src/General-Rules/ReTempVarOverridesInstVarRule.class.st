@@ -53,3 +53,8 @@ ReTempVarOverridesInstVarRule >> critiqueFor: aMethod about: aVarNode [
 		tinyHint: aVarNode name;
 		yourself
 ]
+
+{ #category : 'accessing' }
+ReTempVarOverridesInstVarRule >> name [
+	^ 'Outer variable shadowed by temporary variable or argument'
+]

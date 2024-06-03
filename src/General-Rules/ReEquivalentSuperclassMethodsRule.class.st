@@ -54,3 +54,13 @@ ReEquivalentSuperclassMethodsRule >> ignoredSelectors [
 
 	^ #(new initialize)
 ]
+
+{ #category : 'accessing' }
+ReEquivalentSuperclassMethodsRule >> name [
+	^ 'Methods equivalently defined in superclass'
+]
+
+{ #category : 'accessing' }
+ReEquivalentSuperclassMethodsRule >> rationale [
+	^ 'Check for methods that are equivalent to their superclass methods.'
+]

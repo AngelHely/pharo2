@@ -57,3 +57,18 @@ ReSubclassResponsibilityNotDefinedRule >> check: aClass forCritiquesDo: aCriticB
 						beShouldBeImplemented;
 						yourself ] ]) ]
 ]
+
+{ #category : 'accessing' }
+ReSubclassResponsibilityNotDefinedRule >> name [
+	^ '#subclassResponsibility not defined'
+]
+
+{ #category : 'accessing' }
+ReSubclassResponsibilityNotDefinedRule >> rationale [
+	^ 'Checks that all methods which send #subclassResponsibility, which indicates that they are abstract, are defined in all leaf classes.'
+]
+
+{ #category : 'accessing' }
+ReSubclassResponsibilityNotDefinedRule >> severity [
+	^ #error
+]

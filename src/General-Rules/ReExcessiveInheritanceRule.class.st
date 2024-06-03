@@ -55,3 +55,13 @@ ReExcessiveInheritanceRule >> basicCheck: aClass [
 ReExcessiveInheritanceRule >> inheritanceDepth [
 	^ 10
 ]
+
+{ #category : 'accessing' }
+ReExcessiveInheritanceRule >> name [
+	^ 'Excessive inheritance depth'
+]
+
+{ #category : 'accessing' }
+ReExcessiveInheritanceRule >> rationale [
+	^ 'Deep inheritance (10+ depth) is usually a sign of a design flaw.'
+]

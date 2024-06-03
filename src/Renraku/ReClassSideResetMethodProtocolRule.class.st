@@ -9,14 +9,14 @@ Class {
 	#tag : 'Rules'
 }
 
-{ #category : 'accessing' }
-ReClassSideResetMethodProtocolRule class >> protocolName [
+{ #category : 'accessing - defaults' }
+ReClassSideResetMethodProtocolRule >> protocolName [
 
 	^ 'class initialization'
 ]
 
-{ #category : 'accessing' }
-ReClassSideResetMethodProtocolRule class >> selector [
+{ #category : 'accessing - defaults' }
+ReClassSideResetMethodProtocolRule >> selector [
 
 	^ #reset
 ]

@@ -4,9 +4,9 @@ Checks that a class does not override a message that is essential to the base sy
 Class {
 	#name : 'ReOverridesSpecialMessageRule',
 	#superclass : 'ReAbstractRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Bugs',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Bugs'
 }
 
 { #category : 'testing' }
@@ -75,4 +75,22 @@ ReOverridesSpecialMessageRule >> classShouldNotOverride [
 { #category : 'private' }
 ReOverridesSpecialMessageRule >> metaclassShouldNotOverride [
 	^ self class metaclassShouldNotOverride
+]
+
+{ #category : 'accessing' }
+ReOverridesSpecialMessageRule >> name [
+	^ 'Overrides a "special" message'
+]
+
+{ #category : 'accessing' }
+ReOverridesSpecialMessageRule >> rationale [
+
+	^ 'Checks that a class does not override a message that is essential to the base system. For example, if you override the #class method from object, you are likely to crash your image.
+In the class the messages we should not override are: ',  (', ' join: (self classShouldNotOverride) ),'.
+In the class side the messages we should not override are: ',  (', ' join: (self metaclassShouldNotOverride) ),'.'
+]
+
+{ #category : 'accessing' }
+ReOverridesSpecialMessageRule >> severity [
+	^ #error
 ]

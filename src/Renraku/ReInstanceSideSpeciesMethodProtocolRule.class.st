@@ -20,3 +20,15 @@ ReInstanceSideSpeciesMethodProtocolRule class >> selector [
 
 	^ #species
 ]
+
+{ #category : 'accessing - defaults' }
+ReInstanceSideSpeciesMethodProtocolRule >> protocolName [
+
+	^ 'private'
+]
+
+{ #category : 'accessing - defaults' }
+ReInstanceSideSpeciesMethodProtocolRule >> selector [
+
+	^ #species
+]

@@ -37,3 +37,8 @@ ReUnaryAccessingMethodWithoutReturnRule >> basicCheck: aMethod [
 	(aMethod protocolName beginsWith: 'accessing') ifFalse: [ ^ false ].
 	^ aMethod ast allChildren noneSatisfy: [ :each | each isReturn ]
 ]
+
+{ #category : 'accessing' }
+ReUnaryAccessingMethodWithoutReturnRule >> name [
+	^ 'Unary "accessing" method without explicit return'
+]

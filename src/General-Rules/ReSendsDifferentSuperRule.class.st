@@ -47,3 +47,13 @@ ReSendsDifferentSuperRule class >> uniqueIdentifierName [
 ReSendsDifferentSuperRule >> basicCheck: aMethod [
 	^ aMethod superMessages anySatisfy: [ :message | message ~= aMethod selector ]
 ]
+
+{ #category : 'accessing' }
+ReSendsDifferentSuperRule >> name [
+	^ 'Sends different super message'
+]
+
+{ #category : 'accessing' }
+ReSendsDifferentSuperRule >> rationale [
+	^ 'Checks for methods whose source sends a different super message.'
+]

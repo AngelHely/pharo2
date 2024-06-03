@@ -14,9 +14,9 @@ One pattern proposed by Kent Beck in Best Smalltalk Practices is to define hash 
 Class {
 	#name : 'ReDefinesEqualNotHashRule',
 	#superclass : 'ReAbstractRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Potential Bugs',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Potential Bugs'
 }
 
 { #category : 'testing' }
@@ -44,4 +44,9 @@ ReDefinesEqualNotHashRule class >> uniqueIdentifierName [
 { #category : 'enumerating' }
 ReDefinesEqualNotHashRule >> basicCheck: aClass [
 	^ (aClass includesSelector: #=) and: [ (aClass includesSelector: #hash) not ]
+]
+
+{ #category : 'accessing' }
+ReDefinesEqualNotHashRule >> name [
+	^ 'Defines = but not hash'
 ]

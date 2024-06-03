@@ -65,3 +65,8 @@ ReReturnsBooleanAndOtherRule >> checkIfNodeIsNotBool: node [
 	^ node isSelfVariable or:
 		[ node isLiteralNode and: [ (#(true false) includes: node value) not ] ]
 ]
+
+{ #category : 'accessing' }
+ReReturnsBooleanAndOtherRule >> name [
+	^ 'Returns a boolean and non boolean'
+]

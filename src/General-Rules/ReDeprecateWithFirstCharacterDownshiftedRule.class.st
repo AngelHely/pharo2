@@ -4,19 +4,14 @@ Use uncapitalized instead of withFirstCharacterDownshifted since withFirstCharac
 Class {
 	#name : 'ReDeprecateWithFirstCharacterDownshiftedRule',
 	#superclass : 'ReNodeRewriteRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Style',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Style'
 }
 
 { #category : 'accessing' }
 ReDeprecateWithFirstCharacterDownshiftedRule class >> group [
 	^ 'Style'
-]
-
-{ #category : 'accessing' }
-ReDeprecateWithFirstCharacterDownshiftedRule class >> ruleName [
-	^ 'Use uncapitalized instead of withFirstCharacterDownshifted'
 ]
 
 { #category : 'accessing' }
@@ -31,4 +26,9 @@ ReDeprecateWithFirstCharacterDownshiftedRule >> initialize [
 	super initialize.
 	self
 		replace: '``@object withFirstCharacterDownshifted' with: '``@object uncapitalized'
+]
+
+{ #category : 'accessing' }
+ReDeprecateWithFirstCharacterDownshiftedRule >> name [
+	^ 'Use uncapitalized instead of withFirstCharacterDownshifted'
 ]

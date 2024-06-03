@@ -4,9 +4,9 @@ You are referencing a variable that is not declared anywhere. There is no temp, 
 Class {
 	#name : 'ReUndeclaredVariableRule',
 	#superclass : 'ReNodeBasedRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Bugs',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Bugs'
 }
 
 { #category : 'accessing' }
@@ -34,4 +34,14 @@ ReUndeclaredVariableRule >> critiqueFor: aNode [
 	^ (super critiqueFor: aNode)
 		tinyHint: aNode name;
 		yourself
+]
+
+{ #category : 'accessing' }
+ReUndeclaredVariableRule >> name [
+	^ 'References an undeclared variable'
+]
+
+{ #category : 'accessing' }
+ReUndeclaredVariableRule >> severity [
+	^ #error
 ]

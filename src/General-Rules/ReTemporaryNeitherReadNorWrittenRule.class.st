@@ -4,9 +4,9 @@ There is something wrong in the method as you have variables that are either nor
 Class {
 	#name : 'ReTemporaryNeitherReadNorWrittenRule',
 	#superclass : 'ReNodeBasedRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Optimization',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Optimization'
 }
 
 { #category : 'accessing' }
@@ -25,4 +25,9 @@ ReTemporaryNeitherReadNorWrittenRule >> check: aNode forCritiquesDo: aBlock [
 	aNode isDefinition ifFalse: [ ^ self ].
 	aNode variable isReferenced ifFalse: [
 		aBlock cull: (self critiqueFor: aNode) ]
+]
+
+{ #category : 'accessing' }
+ReTemporaryNeitherReadNorWrittenRule >> name [
+	^ 'Temporary variables not read or not written'
 ]

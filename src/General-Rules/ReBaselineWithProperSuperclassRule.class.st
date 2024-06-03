@@ -49,3 +49,16 @@ ReBaselineWithProperSuperclassRule >> basicCheck: aClass [
 		and: [ (aClass inheritsFrom: BaselineOf) not ]
  
 ]
+
+{ #category : 'accessing' }
+ReBaselineWithProperSuperclassRule >> name [
+
+	^ 'Custom Baseline class should be a subclass of predefined class BaselineOf'
+ 
+]
+
+{ #category : 'accessing' }
+ReBaselineWithProperSuperclassRule >> severity [
+
+	^ #information
+]

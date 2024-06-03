@@ -39,3 +39,8 @@ OverridesDeprecatedMethodRule >> basicCheck: aMethod [
 
 	^ aMethod overriddenMethods anySatisfy: #isDeprecated
 ]
+
+{ #category : 'accessing' }
+OverridesDeprecatedMethodRule >> name [
+	^ 'Overrides a deprecated method'
+]

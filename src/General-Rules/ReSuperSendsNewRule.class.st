@@ -5,19 +5,14 @@ A warning is raised when the statement self new initialize is found in a method.
 Class {
 	#name : 'ReSuperSendsNewRule',
 	#superclass : 'ReNodeMatchRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Bugs',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Bugs'
 }
 
 { #category : 'accessing' }
 ReSuperSendsNewRule class >> group [
 	^ 'Bugs'
-]
-
-{ #category : 'accessing' }
-ReSuperSendsNewRule class >> ruleName [
-	^ 'Sends super new initialize or self new initialize'
 ]
 
 { #category : 'accessing' }
@@ -40,4 +35,9 @@ ReSuperSendsNewRule >> initialize [
 			'(super new: `@expr) initialize'
 			'self new initialize'
 			'(self new: `@expr) initialize' )
+]
+
+{ #category : 'accessing' }
+ReSuperSendsNewRule >> name [
+	^ 'Sends super new initialize or self new initialize'
 ]

@@ -4,19 +4,14 @@ Checks ensure:, ifCurtailed:, and showWhile: blocks for assignments or returns t
 Class {
 	#name : 'ReAssignmentInBlockRule',
 	#superclass : 'ReNodeMatchRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Coding Idiom Violation',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Coding Idiom Violation'
 }
 
 { #category : 'accessing' }
 ReAssignmentInBlockRule class >> group [
 	^ 'Coding Idiom Violation'
-]
-
-{ #category : 'accessing' }
-ReAssignmentInBlockRule class >> ruleName [
-	^ 'Unnecessary assignment or return in block'
 ]
 
 { #category : 'accessing' }
@@ -36,4 +31,9 @@ ReAssignmentInBlockRule >> initialize [
 			'[| `@temps | `@.Statements. ^`@object] ensure: `@block'
 			'[| `@temps | `@.Statements. `var := `@object] ifCurtailed: `@block'
 			'[| `@temps | `@.Statements. ^`@object] ifCurtailed: `@block' )
+]
+
+{ #category : 'accessing' }
+ReAssignmentInBlockRule >> name [
+	^ 'Unnecessary assignment or return in block'
 ]

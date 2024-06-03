@@ -4,9 +4,9 @@ A rule that checks whether a method is an extension and whether it overrides an 
 Class {
 	#name : 'ReOverridingExtentsionMethod',
 	#superclass : 'ReAbstractRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Potential Bugs',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Potential Bugs'
 }
 
 { #category : 'accessing' }
@@ -33,6 +33,12 @@ ReOverridingExtentsionMethod >> basicCheck: aMethod [
           "We allow extensions from the same package to override, so that
           hierarchies can be extended with overriding functionality."
           superMethod package ~= aMethod package ] ] ]
+]
+
+{ #category : 'accessing' }
+ReOverridingExtentsionMethod >> name [
+
+	^ 'An extension method overrides another method'
 ]
 
 { #category : 'private' }

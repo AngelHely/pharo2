@@ -18,11 +18,6 @@ ReShouldTransformedIntoAssertRule class >> group [
 ]
 
 { #category : 'accessing' }
-ReShouldTransformedIntoAssertRule class >> ruleName [
-	^ 'Use assert: instead of should:'
-]
-
-{ #category : 'accessing' }
 ReShouldTransformedIntoAssertRule class >> uniqueIdentifierName [
 
 	^'ShouldTransformedIntoAssert'
@@ -35,4 +30,10 @@ ReShouldTransformedIntoAssertRule >> initialize [
 	self
 		replace: 'self should: [ ``@object1 ]'
 		with: 'self assert: ``@object1'
+]
+
+{ #category : 'accessing' }
+ReShouldTransformedIntoAssertRule >> name [
+
+	^ 'Use assert: instead of should:'
 ]

@@ -4,9 +4,9 @@ Checks for messages that are sent but not implemented by a global. Reported meth
 Class {
 	#name : 'ReSendsUnknownMessageToGlobalRule',
 	#superclass : 'ReNodeBasedRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Bugs',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Bugs'
 }
 
 { #category : 'accessing' }
@@ -42,4 +42,14 @@ ReSendsUnknownMessageToGlobalRule >> basicCheck: aNode [
 	"if we know that the selector does not exist, we ignore"
 	(aNode methodNode compiledMethod allIgnoredNotImplementedSelectors includes: aNode selector) ifTrue: [ ^false ].
 	^ (aNode receiver variable value respondsTo: aNode selector) not
+]
+
+{ #category : 'accessing' }
+ReSendsUnknownMessageToGlobalRule >> name [
+	^ 'Sends unknown message to global'
+]
+
+{ #category : 'accessing' }
+ReSendsUnknownMessageToGlobalRule >> severity [
+	^ #error
 ]

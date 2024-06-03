@@ -4,9 +4,9 @@ The rule checks if the class rule in question specifies which entities it can ch
 Class {
 	#name : 'ReDefineEntityComplianceCheckRule',
 	#superclass : 'ReAbstractRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Coding Idiom Violation',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Coding Idiom Violation'
 }
 
 { #category : 'testing' }
@@ -45,4 +45,17 @@ ReDefineEntityComplianceCheckRule >> basicCheck: aClass [
 { #category : 'properties' }
 ReDefineEntityComplianceCheckRule >> complianceMethods [
 	^ self class complianceMethods
+]
+
+{ #category : 'accessing' }
+ReDefineEntityComplianceCheckRule >> name [
+	^ 'Rule does not define entity compliance'
+]
+
+{ #category : 'accessing' }
+ReDefineEntityComplianceCheckRule >> rationale [
+
+	^ 'You should override on the CLASS SIDE at least one of #',
+	  (self complianceMethods joinUsing: ', #'),
+	  ' methods to return true and so indicate which entities can be checked by your rule.'
 ]

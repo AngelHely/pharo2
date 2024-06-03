@@ -49,3 +49,13 @@ ReNoPrintStringInPrintOnRule >> check: aMethod forCritiquesDo: aCriticBlock [
 				intervalOf: msgSend
 				hint: msgSend selector asString )]
 ]
+
+{ #category : 'accessing' }
+ReNoPrintStringInPrintOnRule >> name [
+	^ 'No printString inside printOn'
+]
+
+{ #category : 'accessing' }
+ReNoPrintStringInPrintOnRule >> rationale [
+	^ 'Use the stream argument to #printOn: e.g.( stream print: anObject ) instead of creating an extra stream by using printString. e.g.( stream nextPutAll: anObject printString ).'
+]

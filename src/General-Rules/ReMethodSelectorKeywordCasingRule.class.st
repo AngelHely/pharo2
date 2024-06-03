@@ -4,9 +4,9 @@ The method name/selector of keyword messages should use camel case. So every key
 Class {
 	#name : 'ReMethodSelectorKeywordCasingRule',
 	#superclass : 'ReAbstractRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Design Flaws',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Design Flaws'
 }
 
 { #category : 'testing - interest' }
@@ -39,4 +39,10 @@ ReMethodSelectorKeywordCasingRule >> basicCheck: aMethod [
 	^ aMethod selector isKeyword and: [
 		  (aMethod selector asString substrings: #( $: )) anySatisfy: [
 			  :each | each first isUppercase ] ]
+]
+
+{ #category : 'accessing' }
+ReMethodSelectorKeywordCasingRule >> name [
+
+	^ 'Keyword selector has wrong casing (camel case required)'
 ]

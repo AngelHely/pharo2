@@ -45,3 +45,18 @@ ReClassNotReferencedRule class >> uniqueIdentifierName [
 ReClassNotReferencedRule >> basicCheck: aClass [
 	^ aClass isUsed not
 ]
+
+{ #category : 'accessing' }
+ReClassNotReferencedRule >> name [
+	^ 'Class not referenced'
+]
+
+{ #category : 'accessing' }
+ReClassNotReferencedRule >> rationale [
+	^ 'Check if a class is referenced either directly or indirectly by a symbol. If a class is not referenced, it can be removed.'
+]
+
+{ #category : 'accessing' }
+ReClassNotReferencedRule >> severity [
+	^ #information
+]

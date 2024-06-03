@@ -37,3 +37,8 @@ ReMethodSignaturePeriodRule >> check: aMethod forCritiquesDo: aCriticBlock [
 						  interval: (1 to: firstLine size))
 				 by: self) ]
 ]
+
+{ #category : 'accessing' }
+ReMethodSignaturePeriodRule >> name [
+	^ 'Method signature has terminating period'
+]

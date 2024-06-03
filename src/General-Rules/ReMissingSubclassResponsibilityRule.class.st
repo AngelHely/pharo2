@@ -56,3 +56,8 @@ ReMissingSubclassResponsibilityRule >> check: aClass forCritiquesDo: aCritiqueBl
 					aCritiqueBlock cull: critic ].
 				^ self ] ]
 ]
+
+{ #category : 'accessing' }
+ReMissingSubclassResponsibilityRule >> name [
+	^ 'Method defined in all subclasses, but not in superclass'
+]

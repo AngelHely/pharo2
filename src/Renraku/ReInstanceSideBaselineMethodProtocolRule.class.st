@@ -20,3 +20,15 @@ ReInstanceSideBaselineMethodProtocolRule class >> selector [
 
 	^ #baseline:
 ]
+
+{ #category : 'accessing - defaults' }
+ReInstanceSideBaselineMethodProtocolRule >> protocolName [
+
+	^ 'baselines'
+]
+
+{ #category : 'accessing - defaults' }
+ReInstanceSideBaselineMethodProtocolRule >> selector [
+
+	^ #baseline:
+]

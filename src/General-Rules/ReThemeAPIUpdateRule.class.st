@@ -5,19 +5,14 @@ Do not explicitly refer to UITheme current but use Smalltalk ui theme. Similarly
 Class {
 	#name : 'ReThemeAPIUpdateRule',
 	#superclass : 'ReNodeRewriteRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Coding Idiom Violation',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Coding Idiom Violation'
 }
 
 { #category : 'accessing' }
 ReThemeAPIUpdateRule class >> group [
 	^ 'Coding Idiom Violation'
-]
-
-{ #category : 'accessing' }
-ReThemeAPIUpdateRule class >> ruleName [
-	^ 'Use "Smalltalk ui theme" and "Smalltalk ui icons"'
 ]
 
 { #category : 'accessing' }
@@ -35,4 +30,9 @@ ReThemeAPIUpdateRule >> initialize [
 			with: 'Smalltalk ui theme';
 		replace: 'ThemeIcons current'
 			with: 'Smalltalk ui icons'
+]
+
+{ #category : 'accessing' }
+ReThemeAPIUpdateRule >> name [
+	^ 'Use "Smalltalk ui theme" and "Smalltalk ui icons"'
 ]

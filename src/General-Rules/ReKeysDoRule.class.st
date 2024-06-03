@@ -11,24 +11,14 @@ This array can be quite large and using the keysDo: does not create such interme
 Class {
 	#name : 'ReKeysDoRule',
 	#superclass : 'ReNodeRewriteRule',
-	#category : 'General-Rules-Migrated',
+	#category : 'General-Rules-Optimization',
 	#package : 'General-Rules',
-	#tag : 'Migrated'
+	#tag : 'Optimization'
 }
 
 { #category : 'accessing' }
 ReKeysDoRule class >> group [
 	^ 'Optimization'
-]
-
-{ #category : 'accessing' }
-ReKeysDoRule class >> rationale [
-	^ 'The use of keysDo:/valuesDo: means one intermediate collection created less'
-]
-
-{ #category : 'accessing' }
-ReKeysDoRule class >> ruleName [
-	^ 'keys do: -> keysDo: and valuesDo:'
 ]
 
 { #category : 'accessing' }
@@ -44,4 +34,14 @@ ReKeysDoRule >> initialize [
 	self
 		replace: '``@object keys do: ``@block' with: '``@object keysDo: ``@block';
 		replace: '``@object values do: ``@block' with: '``@object valuesDo: ``@block'
+]
+
+{ #category : 'accessing' }
+ReKeysDoRule >> name [
+	^ 'keys do: -> keysDo: and valuesDo:'
+]
+
+{ #category : 'accessing' }
+ReKeysDoRule >> rationale [
+	^ 'The use of keysDo:/valuesDo: means one intermediate collection created less'
 ]
