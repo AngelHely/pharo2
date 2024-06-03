@@ -4,14 +4,24 @@ If a class has a method in its trait composition, the method should not be imple
 Class {
 	#name : 'ReLocalMethodsSameThanTraitRule',
 	#superclass : 'ReAbstractRule',
-	#category : 'General-Rules-Optimization',
+	#category : 'General-Rules-Migrated',
 	#package : 'General-Rules',
-	#tag : 'Optimization'
+	#tag : 'Migrated'
 }
 
 { #category : 'testing' }
 ReLocalMethodsSameThanTraitRule class >> checksClass [
 	^ true
+]
+
+{ #category : 'accessing' }
+ReLocalMethodsSameThanTraitRule class >> group [
+	^ 'Optimization'
+]
+
+{ #category : 'accessing' }
+ReLocalMethodsSameThanTraitRule class >> ruleName [
+	^ 'Repeated methods in the trait composition'
 ]
 
 { #category : 'accessing' }
@@ -35,14 +45,4 @@ ReLocalMethodsSameThanTraitRule >> check: aClass forCritiquesDo: aCriticBlock [
 		thenDo: [ :duplicatedMethod |
 			aCriticBlock cull:
 				(ReRemoveMethodCritique for: aClass selector: duplicatedMethod selector by: self) ]
-]
-
-{ #category : 'accessing' }
-ReLocalMethodsSameThanTraitRule >> group [
-	^ 'Optimization'
-]
-
-{ #category : 'accessing' }
-ReLocalMethodsSameThanTraitRule >> name [
-	^ 'Repeated methods in the trait composition'
 ]

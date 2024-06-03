@@ -4,15 +4,20 @@ this smell arise when a branch nil useless is detected.
 Class {
 	#name : 'ReNilBranchRule',
 	#superclass : 'ReNodeRewriteRule',
-	#category : 'General-Rules-Design Flaws',
+	#category : 'General-Rules-Migrated',
 	#package : 'General-Rules',
-	#tag : 'Design Flaws'
+	#tag : 'Migrated'
 }
 
 { #category : 'accessing' }
-ReNilBranchRule >> group [
+ReNilBranchRule class >> group [
 
 	^ 'Design Flaws'
+]
+
+{ #category : 'accessing' }
+ReNilBranchRule class >> ruleName [
+	^ 'branch nil is useless'
 ]
 
 { #category : 'initialization' }
@@ -23,10 +28,4 @@ ReNilBranchRule >> initialize [
 		with: '`@condition ifTrue: [ `@.statements]';
 		replace: '`@condition ifFalse: [ `@.statements] ifTrue: [ nil ]'
 		with: '`@condition ifFalse: [ `@.statements]'
-]
-
-{ #category : 'accessing' }
-ReNilBranchRule >> name [ 
-
-	^ 'branch nil is useless'
 ]

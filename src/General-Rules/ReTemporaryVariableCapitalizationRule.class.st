@@ -4,10 +4,20 @@ Temporary and argument variable names should start with a lowercase letter.
 Class {
 	#name : 'ReTemporaryVariableCapitalizationRule',
 	#superclass : 'ReNodeBasedRule',
-	#category : 'General-Rules-Style',
+	#category : 'General-Rules-Migrated',
 	#package : 'General-Rules',
-	#tag : 'Style'
+	#tag : 'Migrated'
 }
+
+{ #category : 'accessing' }
+ReTemporaryVariableCapitalizationRule class >> group [
+	^ 'Style'
+]
+
+{ #category : 'accessing' }
+ReTemporaryVariableCapitalizationRule class >> ruleName [
+	^ 'Temporary variable (or parameter) capitalized'
+]
 
 { #category : 'running' }
 ReTemporaryVariableCapitalizationRule >> basicCheck: aNode [
@@ -34,14 +44,4 @@ ReTemporaryVariableCapitalizationRule >> critiqueFor: aNode [
 				selector: aNode methodNode selector).
 
 	^ crit
-]
-
-{ #category : 'accessing' }
-ReTemporaryVariableCapitalizationRule >> group [
-	^ 'Style'
-]
-
-{ #category : 'accessing' }
-ReTemporaryVariableCapitalizationRule >> name [
-	^ 'Temporary variable (or parameter) capitalized'
 ]

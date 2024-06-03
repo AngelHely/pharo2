@@ -16,14 +16,24 @@ NOTE: This rule detects *many* false positives.
 Class {
 	#name : 'ReTempsReadBeforeWrittenRule',
 	#superclass : 'ReAbstractRule',
-	#category : 'General-Rules-Potential Bugs',
+	#category : 'General-Rules-Migrated',
 	#package : 'General-Rules',
-	#tag : 'Potential Bugs'
+	#tag : 'Migrated'
 }
 
 { #category : 'testing' }
 ReTempsReadBeforeWrittenRule class >> checksMethod [
 	^ true
+]
+
+{ #category : 'accessing' }
+ReTempsReadBeforeWrittenRule class >> group [
+	^ 'Potential Bugs'
+]
+
+{ #category : 'accessing' }
+ReTempsReadBeforeWrittenRule class >> ruleName [
+	^ 'Temporaries may be read before written'
 ]
 
 { #category : 'accessing' }
@@ -51,15 +61,4 @@ ReTempsReadBeforeWrittenRule >> findReadsBeforeWrittenTemporariesIn: aMethod [
 
 	^ (RBReadBeforeWrittenTester variablesReadBeforeWrittenIn:
 		   aMethod ast) array select: #isNotNil
-]
-
-{ #category : 'accessing' }
-ReTempsReadBeforeWrittenRule >> group [
-	^ 'Potential Bugs'
-]
-
-{ #category : 'accessing' }
-ReTempsReadBeforeWrittenRule >> name [
-
-	^ 'Temporaries may be read before written'
 ]

@@ -4,10 +4,20 @@ Checks for senders of comparator messages that do not use the result of the comp
 Class {
 	#name : 'ReEqualNotUsedRule',
 	#superclass : 'ReNodeBasedRule',
-	#category : 'General-Rules-Potential Bugs',
+	#category : 'General-Rules-Migrated',
 	#package : 'General-Rules',
-	#tag : 'Potential Bugs'
+	#tag : 'Migrated'
 }
+
+{ #category : 'accessing' }
+ReEqualNotUsedRule class >> group [
+	^ 'Potential Bugs'
+]
+
+{ #category : 'accessing' }
+ReEqualNotUsedRule class >> ruleName [
+	^ 'Doesn''t use the result of a =, ~=, etc.'
+]
 
 { #category : 'accessing' }
 ReEqualNotUsedRule class >> uniqueIdentifierName [
@@ -19,14 +29,4 @@ ReEqualNotUsedRule class >> uniqueIdentifierName [
 { #category : 'running' }
 ReEqualNotUsedRule >> basicCheck: node [
 	^ node isMessage and: [ node isUsedAsReturnValue not and: [ #(#= #== #~= #~~ #< #> #<= #>=) includes: node selector ] ]
-]
-
-{ #category : 'accessing' }
-ReEqualNotUsedRule >> group [
-	^ 'Potential Bugs'
-]
-
-{ #category : 'accessing' }
-ReEqualNotUsedRule >> name [
-	^ 'Doesn''t use the result of a =, ~=, etc.'
 ]

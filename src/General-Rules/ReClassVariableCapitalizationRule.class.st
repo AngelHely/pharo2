@@ -4,14 +4,24 @@ Class and pool variable names should start with an uppercase letter.
 Class {
 	#name : 'ReClassVariableCapitalizationRule',
 	#superclass : 'ReAbstractRule',
-	#category : 'General-Rules-Style',
+	#category : 'General-Rules-Migrated',
 	#package : 'General-Rules',
-	#tag : 'Style'
+	#tag : 'Migrated'
 }
 
 { #category : 'testing-interest' }
 ReClassVariableCapitalizationRule class >> checksClass [
 	^ true
+]
+
+{ #category : 'accessing' }
+ReClassVariableCapitalizationRule class >> group [
+	^ 'Style'
+]
+
+{ #category : 'accessing' }
+ReClassVariableCapitalizationRule class >> ruleName [
+	^ 'Class (or pool) variable not capitalized'
 ]
 
 { #category : 'running' }
@@ -43,14 +53,4 @@ ReClassVariableCapitalizationRule >> critiqueFor: aClass about: aVarName [
 				in: aClass).
 
 	^ crit
-]
-
-{ #category : 'accessing' }
-ReClassVariableCapitalizationRule >> group [
-	^ 'Style'
-]
-
-{ #category : 'accessing' }
-ReClassVariableCapitalizationRule >> name [
-	^ 'Class (or pool) variable not capitalized'
 ]

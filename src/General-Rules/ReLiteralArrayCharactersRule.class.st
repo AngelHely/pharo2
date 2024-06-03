@@ -4,10 +4,20 @@ Literal arrays containing only characters can more efficiently represented as st
 Class {
 	#name : 'ReLiteralArrayCharactersRule',
 	#superclass : 'ReNodeBasedRule',
-	#category : 'General-Rules-Optimization',
+	#category : 'General-Rules-Migrated',
 	#package : 'General-Rules',
-	#tag : 'Optimization'
+	#tag : 'Migrated'
 }
+
+{ #category : 'accessing' }
+ReLiteralArrayCharactersRule class >> group [
+	^ 'Optimization'
+]
+
+{ #category : 'accessing' }
+ReLiteralArrayCharactersRule class >> ruleName [
+	^ 'Literal array contains only characters'
+]
 
 { #category : 'accessing' }
 ReLiteralArrayCharactersRule class >> uniqueIdentifierName [
@@ -21,14 +31,4 @@ ReLiteralArrayCharactersRule >> basicCheck: aNode [
 	aNode isLiteralArray ifFalse: [ ^ false ].
 	aNode value ifEmpty: [ ^ false ].
 	^ aNode value allSatisfy: #isCharacter
-]
-
-{ #category : 'accessing' }
-ReLiteralArrayCharactersRule >> group [
-	^ 'Optimization'
-]
-
-{ #category : 'accessing' }
-ReLiteralArrayCharactersRule >> name [
-	^ 'Literal array contains only characters'
 ]

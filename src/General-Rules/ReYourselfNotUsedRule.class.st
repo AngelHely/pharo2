@@ -4,10 +4,20 @@ Check for methods sending the yourself message when it is not necessary.
 Class {
 	#name : 'ReYourselfNotUsedRule',
 	#superclass : 'ReNodeBasedRule',
-	#category : 'General-Rules-Optimization',
+	#category : 'General-Rules-Migrated',
 	#package : 'General-Rules',
-	#tag : 'Optimization'
+	#tag : 'Migrated'
 }
+
+{ #category : 'accessing' }
+ReYourselfNotUsedRule class >> group [
+	^ 'Optimization'
+]
+
+{ #category : 'accessing' }
+ReYourselfNotUsedRule class >> ruleName [
+	^ 'Doesn''t use the result of a yourself message'
+]
 
 { #category : 'accessing' }
 ReYourselfNotUsedRule class >> uniqueIdentifierName [
@@ -21,14 +31,4 @@ ReYourselfNotUsedRule >> basicCheck: aNode [
 	aNode isMessage ifFalse: [ ^ false ].
 	aNode selector = #yourself ifFalse: [ ^ false ].
 	^ aNode isUsedAsReturnValue not
-]
-
-{ #category : 'accessing' }
-ReYourselfNotUsedRule >> group [
-	^ 'Optimization'
-]
-
-{ #category : 'accessing' }
-ReYourselfNotUsedRule >> name [
-	^ 'Doesn''t use the result of a yourself message'
 ]

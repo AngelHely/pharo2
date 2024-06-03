@@ -4,10 +4,20 @@ Checks for literal arrays that contain the #, symbol. The user may have thought 
 Class {
 	#name : 'ReLiteralArrayContainsCommaRule',
 	#superclass : 'ReNodeBasedRule',
-	#category : 'General-Rules-Coding Idiom Violation',
+	#category : 'General-Rules-Migrated',
 	#package : 'General-Rules',
-	#tag : 'Coding Idiom Violation'
+	#tag : 'Migrated'
 }
+
+{ #category : 'accessing' }
+ReLiteralArrayContainsCommaRule class >> group [
+	^ 'Coding Idiom Violation'
+]
+
+{ #category : 'accessing' }
+ReLiteralArrayContainsCommaRule class >> ruleName [
+	^ 'Literal array contains a #,'
+]
 
 { #category : 'accessing' }
 ReLiteralArrayContainsCommaRule class >> uniqueIdentifierName [
@@ -26,14 +36,4 @@ ReLiteralArrayContainsCommaRule >> basicCheck: aNode [
 		 FFICompilerPlugin ffiCalloutSelectors includes: aNode parent parent selector ]) ifTrue: [ ^ false ].
 
 	^ aNode value includes: #,
-]
-
-{ #category : 'accessing' }
-ReLiteralArrayContainsCommaRule >> group [
-	^ 'Coding Idiom Violation'
-]
-
-{ #category : 'accessing' }
-ReLiteralArrayContainsCommaRule >> name [
-	^ 'Literal array contains a #,'
 ]

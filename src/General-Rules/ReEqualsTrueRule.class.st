@@ -4,10 +4,25 @@ Check for a =, ==, ~=, or ~~ message being sent to true/false or with true/false
 Class {
 	#name : 'ReEqualsTrueRule',
 	#superclass : 'ReNodeBasedRule',
-	#category : 'General-Rules-Optimization',
+	#category : 'General-Rules-Migrated',
 	#package : 'General-Rules',
-	#tag : 'Optimization'
+	#tag : 'Migrated'
 }
+
+{ #category : 'accessing' }
+ReEqualsTrueRule class >> group [
+	^ 'Optimization'
+]
+
+{ #category : 'accessing' }
+ReEqualsTrueRule class >> ruleName [
+	^ 'Unnecessary "= true"'
+]
+
+{ #category : 'accessing' }
+ReEqualsTrueRule class >> severity [
+	^ #information
+]
 
 { #category : 'accessing' }
 ReEqualsTrueRule class >> uniqueIdentifierName [
@@ -24,19 +39,4 @@ ReEqualsTrueRule >> basicCheck: aNode [
 	(parent := aNode parent) ifNil: [ ^ false ].
 	parent isMessage ifFalse: [ ^ false ].
 	^ #(#= #== #~= #~~) includes: parent selector
-]
-
-{ #category : 'accessing' }
-ReEqualsTrueRule >> group [
-	^ 'Optimization'
-]
-
-{ #category : 'accessing' }
-ReEqualsTrueRule >> name [
-	^ 'Unnecessary "= true"'
-]
-
-{ #category : 'accessing' }
-ReEqualsTrueRule >> severity [
-	^ #information
 ]

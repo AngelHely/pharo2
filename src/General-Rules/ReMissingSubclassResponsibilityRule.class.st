@@ -4,14 +4,24 @@ This smell arises when a class defines a method in all subclasses, but not in it
 Class {
 	#name : 'ReMissingSubclassResponsibilityRule',
 	#superclass : 'ReAbstractRule',
-	#category : 'General-Rules-Design Flaws',
+	#category : 'General-Rules-Migrated',
 	#package : 'General-Rules',
-	#tag : 'Design Flaws'
+	#tag : 'Migrated'
 }
 
 { #category : 'testing' }
 ReMissingSubclassResponsibilityRule class >> checksClass [
 	^ true
+]
+
+{ #category : 'accessing' }
+ReMissingSubclassResponsibilityRule class >> group [
+	^ 'Design Flaws'
+]
+
+{ #category : 'accessing' }
+ReMissingSubclassResponsibilityRule class >> ruleName [
+	^ 'Method defined in all subclasses, but not in superclass'
 ]
 
 { #category : 'accessing' }
@@ -45,14 +55,4 @@ ReMissingSubclassResponsibilityRule >> check: aClass forCritiquesDo: aCritiqueBl
 				thenDo: [ :critic |
 					aCritiqueBlock cull: critic ].
 				^ self ] ]
-]
-
-{ #category : 'accessing' }
-ReMissingSubclassResponsibilityRule >> group [
-	^ 'Design Flaws'
-]
-
-{ #category : 'accessing' }
-ReMissingSubclassResponsibilityRule >> name [
-	^ 'Method defined in all subclasses, but not in superclass'
 ]

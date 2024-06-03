@@ -4,14 +4,24 @@ A rule to check for a period terminating the method signature, which is unnecess
 Class {
 	#name : 'ReMethodSignaturePeriodRule',
 	#superclass : 'ReAbstractRule',
-	#category : 'General-Rules-Potential Bugs',
+	#category : 'General-Rules-Migrated',
 	#package : 'General-Rules',
-	#tag : 'Potential Bugs'
+	#tag : 'Migrated'
 }
 
 { #category : 'testing' }
 ReMethodSignaturePeriodRule class >> checksMethod [
 	^ true
+]
+
+{ #category : 'accessing' }
+ReMethodSignaturePeriodRule class >> group [
+	^ 'Potential Bugs'
+]
+
+{ #category : 'accessing' }
+ReMethodSignaturePeriodRule class >> ruleName [
+	^ 'Method signature has terminating period'
 ]
 
 { #category : 'running' }
@@ -26,14 +36,4 @@ ReMethodSignaturePeriodRule >> check: aMethod forCritiquesDo: aCriticBlock [
 						  entity: aMethod
 						  interval: (1 to: firstLine size))
 				 by: self) ]
-]
-
-{ #category : 'accessing' }
-ReMethodSignaturePeriodRule >> group [
-	^ 'Potential Bugs'
-]
-
-{ #category : 'accessing' }
-ReMethodSignaturePeriodRule >> name [
-	^ 'Method signature has terminating period'
 ]

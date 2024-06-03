@@ -4,10 +4,20 @@ Checks for inefficient nesting of logical conditions.
 Class {
 	#name : 'ReUnoptimizedAndOrRule',
 	#superclass : 'ReNodeMatchRule',
-	#category : 'General-Rules-Optimization',
+	#category : 'General-Rules-Migrated',
 	#package : 'General-Rules',
-	#tag : 'Optimization'
+	#tag : 'Migrated'
 }
+
+{ #category : 'accessing' }
+ReUnoptimizedAndOrRule class >> group [
+	^ 'Optimization'
+]
+
+{ #category : 'accessing' }
+ReUnoptimizedAndOrRule class >> ruleName [
+	^ 'Uses "(a and: [b]) and: [c]" instead of "a and: [b and: [c]]"'
+]
 
 { #category : 'accessing' }
 ReUnoptimizedAndOrRule class >> uniqueIdentifierName [
@@ -16,20 +26,10 @@ ReUnoptimizedAndOrRule class >> uniqueIdentifierName [
 	^'UnoptimizedAndOrRule'
 ]
 
-{ #category : 'accessing' }
-ReUnoptimizedAndOrRule >> group [
-	^ 'Optimization'
-]
-
 { #category : 'initialization' }
 ReUnoptimizedAndOrRule >> initialize [
 	super initialize.
 	self matchesAny: #(
 			'(`@a and: `@b) and: `@c'
 			'(`@a or: `@b) or: `@c' )
-]
-
-{ #category : 'accessing' }
-ReUnoptimizedAndOrRule >> name [
-	^ 'Uses "(a and: [b]) and: [c]" instead of "a and: [b and: [c]]"'
 ]

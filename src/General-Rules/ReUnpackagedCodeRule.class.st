@@ -4,9 +4,9 @@ Code that is not contained in a Monticello package is not versioned and cannot b
 Class {
 	#name : 'ReUnpackagedCodeRule',
 	#superclass : 'ReAbstractRule',
-	#category : 'General-Rules-Potential Bugs',
+	#category : 'General-Rules-Migrated',
 	#package : 'General-Rules',
-	#tag : 'Potential Bugs'
+	#tag : 'Migrated'
 }
 
 { #category : 'testing' }
@@ -20,6 +20,16 @@ ReUnpackagedCodeRule class >> checksMethod [
 ]
 
 { #category : 'accessing' }
+ReUnpackagedCodeRule class >> group [
+	^ 'Potential Bugs'
+]
+
+{ #category : 'accessing' }
+ReUnpackagedCodeRule class >> ruleName [
+	^ 'Unpackaged code'
+]
+
+{ #category : 'accessing' }
 ReUnpackagedCodeRule class >> uniqueIdentifierName [
 	"This number should be unique and should change only when the rule completely change semantics"
 
@@ -30,14 +40,4 @@ ReUnpackagedCodeRule class >> uniqueIdentifierName [
 ReUnpackagedCodeRule >> basicCheck: anEntity [
 
 	^ anEntity package isNotNil and: [ anEntity package isUndefined ]
-]
-
-{ #category : 'accessing' }
-ReUnpackagedCodeRule >> group [
-	^ 'Potential Bugs'
-]
-
-{ #category : 'accessing' }
-ReUnpackagedCodeRule >> name [
-	^ 'Unpackaged code'
 ]

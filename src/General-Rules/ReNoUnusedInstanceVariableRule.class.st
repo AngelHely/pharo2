@@ -1,15 +1,31 @@
 Class {
 	#name : 'ReNoUnusedInstanceVariableRule',
 	#superclass : 'ReAbstractRule',
-	#category : 'General-Rules-Optimization',
+	#category : 'General-Rules-Migrated',
 	#package : 'General-Rules',
-	#tag : 'Optimization'
+	#tag : 'Migrated'
 }
 
 { #category : 'testing' }
 ReNoUnusedInstanceVariableRule class >> checksClass [
 
 	^ true
+]
+
+{ #category : 'accessing' }
+ReNoUnusedInstanceVariableRule class >> group [
+
+	^ 'Optimization'
+]
+
+{ #category : 'accessing' }
+ReNoUnusedInstanceVariableRule class >> rationale [
+	^ 'Classes should have instance variables that are actually used - instance variables without a reference should be removed.'
+]
+
+{ #category : 'accessing' }
+ReNoUnusedInstanceVariableRule class >> ruleName [
+	^ 'Unused instance variable'
 ]
 
 { #category : 'accessing' }
@@ -42,21 +58,4 @@ ReNoUnusedInstanceVariableRule >> critiqueFor: aClass about: aVarName [
 
 
 	^ crit
-]
-
-{ #category : 'accessing' }
-ReNoUnusedInstanceVariableRule >> group [
-
-	^ 'Optimization'
-]
-
-{ #category : 'accessing' }
-ReNoUnusedInstanceVariableRule >> name [
-
-	^ 'Unused instance variable'
-]
-
-{ #category : 'accessing' }
-ReNoUnusedInstanceVariableRule >> rationale [
-	^ 'Classes should have instance variables that are actually used - instance variables without a reference should be removed.'
 ]
