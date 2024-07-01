@@ -46,7 +46,7 @@ ReSeparateMethodBodyAndHeaderRule >> anchorFor: aNode [
 			interval: (Interval from: aNode methodNode body start to: endOfFirstLine)
 ]
 
-{ #category : 'helpers' }
+{ #category : 'running' }
 ReSeparateMethodBodyAndHeaderRule >> basicCheck: anEntity [
 
 	| endOfHeader startOfBody |
